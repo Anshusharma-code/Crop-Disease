@@ -1,0 +1,38 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Train Model",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/scripts/train_model.py",
+      "args": [
+        "--data_dir", "data/plantvillage",
+        "--architecture", "mobilenet",
+        "--epochs", "20",
+        "--batch_size", "16"
+      ],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Predict Disease",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/scripts/predict.py",
+      "args": [
+        "--image", "data/sample_images/test_leaf.jpg"
+      ],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Run Web App",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/app/server.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}
